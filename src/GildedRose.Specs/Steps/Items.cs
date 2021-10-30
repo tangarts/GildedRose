@@ -25,18 +25,44 @@ namespace GildedRose.Specs.Steps
             _scenarioContext.Pending();
         }
 
-        [When(@"the sell in value decreases by (.*)")]
+        [Given(@"the sell in date has passed")]
+        public void GivenTheSellInDateHasPassed()
+        {
+            _scenarioContext.Pending();
+        }
+
+        [Given(@"the sell in date is (.*) days or less")]
+        public void GivenTheSellInDateIsDaysOrLess(int p0)
+        {
+            _scenarioContext.Pending();
+        }
+
+
+        [When(@"I update quality")]
+        public void WhenIUpdateQuality()
+        {
+            _scenarioContext.Pending();
+        }
+
+        [Then(@"the sell in value should decrease by (.*)")]
         public void WhenTheSellInValueDecreasesBy(int p0)
         {
             _scenarioContext.Pending();
         }
 
 
+        [Then(@"the quality should decrease by (.*)")]
+        public void ThenTheQualityShouldDecreaseBy(int p0)
+        {
+            _scenarioContext.Pending();
+        }
+
         [Then(@"the quality should increase by (.*)")]
         public void ThenTheQualityShouldIncreaseBy(int p0)
         {
             _scenarioContext.Pending();
         }
+
 
         [Then(@"the quality should be (.*)")]
         public void ThenTheQualityShouldBe(int p0)
