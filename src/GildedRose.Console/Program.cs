@@ -23,18 +23,30 @@ namespace GildedRose.Console
                     },
                 new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
             };
-
-            items.Add(new Item { Name = "Aged Brie", SellIn = 0, Quality = 0 });
+            ShowItems(items);
+            items.Add(new Item { Name = "Aged Brie", SellIn = 0, Quality = 0 }); ;
             items.Add(new Item { Name = "Elixir of the Mongoose", SellIn = 0, Quality = 0 });
 
             var app = new App(items);
-
-            app.UpdateQuality();
-            foreach(Item item in app.Items)
+            for (int i = 0; i < 16 ; i++)
+            {
+                app.UpdateQuality();
+            }
+            
+            ShowItems(items);
+            foreach (Item item in app.Items)
             {
                 System.Console.WriteLine($"name: {item.Name}, sell in: {item.SellIn}, quality: {item.Quality}");
             }    
             System.Console.ReadKey();
+        }
+
+        static void ShowItems(List<Item> items)
+        {
+            foreach(Item item in items)
+            {
+                System.Console.WriteLine($"| {item.Name} | {item.SellIn} | {item.Quality} |");
+            }
         }
     }
 

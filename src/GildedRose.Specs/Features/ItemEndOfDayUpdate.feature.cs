@@ -20,23 +20,23 @@ namespace GildedRose.Specs.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Items")]
-    public partial class ItemsFeature
+    [NUnit.Framework.DescriptionAttribute("ItemEndOfDayUpdate")]
+    public partial class ItemEndOfDayUpdateFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Items.feature"
+#line 1 "ItemEndOfDayUpdate.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Items", "\tAs a system owner\r\n\tIn order to manage invenrtory\r\n\tI need to be able to keep tr" +
-                    "ack of item behaviour", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "ItemEndOfDayUpdate", "\tAs a system owner\r\n\tIn order to manage inventory\r\n\tI need to update quality and " +
+                    "sell-in values each day", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,15 +74,6 @@ namespace GildedRose.Specs.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 6
-#line hidden
-#line 7
- testRunner.Given("a guilded rose", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-        }
-        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Once the sell by date has passed, Quality degrades twice as fast")]
         public virtual void OnceTheSellByDateHasPassedQualityDegradesTwiceAsFast()
@@ -90,7 +81,7 @@ namespace GildedRose.Specs.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Once the sell by date has passed, Quality degrades twice as fast", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 9
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -110,27 +101,24 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Sell in",
                             "Quality"});
-                table1.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "+5 Dexterity Vest",
                             "1",
                             "20"});
-#line 10
- testRunner.Given("I have an item", ((string)(null)), table1, "Given ");
+#line 7
+ testRunner.Given("I have an item", ((string)(null)), table7, "Given ");
 #line hidden
-#line 13
+#line 10
  testRunner.And("the sell in date has passed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 11
  testRunner.When("I update quality", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 15
+#line 12
  testRunner.Then("the quality should decrease by 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -144,7 +132,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Quality of an item is never negative", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 17
+#line 14
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -164,24 +152,21 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Sell in",
                             "Quality"});
-                table2.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "+5 Dexterity Vest",
                             "10",
                             "20"});
-#line 18
- testRunner.Given("I have an item", ((string)(null)), table2, "Given ");
+#line 15
+ testRunner.Given("I have an item", ((string)(null)), table8, "Given ");
 #line hidden
-#line 21
+#line 18
  testRunner.When("I update quality", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 22
+#line 19
  testRunner.Then("the quality should be positive", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -195,7 +180,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("\"Aged Brie\" actually increases in Quality the older it gets", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 24
+#line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -215,27 +200,24 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Sell in",
                             "Quality"});
-                table3.AddRow(new string[] {
+                table9.AddRow(new string[] {
                             "Aged Brie",
                             "10",
                             "20"});
-#line 25
- testRunner.Given("I have an item", ((string)(null)), table3, "Given ");
+#line 22
+ testRunner.Given("I have an item", ((string)(null)), table9, "Given ");
 #line hidden
-#line 28
+#line 25
  testRunner.When("I update quality", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 29
+#line 26
  testRunner.Then("the sell in value should decrease by 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 30
+#line 27
  testRunner.Then("the quality should increase by 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -256,7 +238,7 @@ this.FeatureBackground();
             argumentsOfScenario.Add("SellIn", sellIn);
             argumentsOfScenario.Add("Quality", quality);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The Quality of an item is never more than 50", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 32
+#line 29
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -276,27 +258,24 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "SellIn",
                             "Quality"});
-                table4.AddRow(new string[] {
-                            "",
-                            "",
-                            ""});
-#line 33
- testRunner.Given("I have an item", ((string)(null)), table4, "Given ");
+                table10.AddRow(new string[] {
+                            string.Format("{0}", name),
+                            string.Format("{0}", sellIn),
+                            string.Format("{0}", quality)});
+#line 30
+ testRunner.Given("I have an item", ((string)(null)), table10, "Given ");
 #line hidden
-#line 36
+#line 33
  testRunner.And("it is not a Sulfuras", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 37
+#line 34
  testRunner.When("I update quality", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 38
+#line 35
  testRunner.Then("the quality should be less than 50", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -310,7 +289,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("\"Sulfuras\", being a legendary item, never has to be sold or decreases in Quality", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 47
+#line 44
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -330,27 +309,24 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "SellIn",
                             "Quality"});
-                table5.AddRow(new string[] {
+                table11.AddRow(new string[] {
                             "Sulfuras, Hand of Ragnaros",
                             "0",
                             "80"});
-#line 48
- testRunner.Given("I have an item with the name of Sulfuras", ((string)(null)), table5, "Given ");
+#line 45
+ testRunner.Given("I have an item with the name of Sulfuras", ((string)(null)), table11, "Given ");
 #line hidden
-#line 51
+#line 48
  testRunner.When("I update quality", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 52
+#line 49
  testRunner.Then("the sell in date should be 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 53
+#line 50
  testRunner.And("the quality should be 80", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -364,7 +340,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("\"Backstage passes\" increases in Quality as it\'s SellIn  value approaches;", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 55
+#line 52
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -384,9 +360,6 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
             }
             this.ScenarioCleanup();
         }
@@ -398,7 +371,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("\"Backstage passes\" acts like brie", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 57
+#line 54
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -418,27 +391,24 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "SellIn",
                             "Quality"});
-                table6.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "Backstage passes to a TAFKAL80ETC concert",
                             "12",
                             "2"});
-#line 58
- testRunner.Given("I have an item with the name of Backstage passes", ((string)(null)), table6, "Given ");
+#line 55
+ testRunner.Given("I have an item with the name of Backstage passes", ((string)(null)), table12, "Given ");
 #line hidden
-#line 61
+#line 58
  testRunner.When("I update quality", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 62
+#line 59
  testRunner.Then("the sell in value should decrease by 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 63
+#line 60
  testRunner.Then("the quality should increase by 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -452,7 +422,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("\"Backstage passes\" quality 1", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 65
+#line 62
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -472,27 +442,24 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "SellIn",
                             "Quality"});
-                table7.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "Backstage passes to a TAFKAL80ETC concert",
                             "9",
                             "2"});
-#line 66
- testRunner.Given("I have an item with the name of Backstage passes", ((string)(null)), table7, "Given ");
+#line 63
+ testRunner.Given("I have an item with the name of Backstage passes", ((string)(null)), table13, "Given ");
 #line hidden
-#line 69
+#line 66
  testRunner.And("the sell in date is 10 days or less", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 70
+#line 67
  testRunner.When("I update quality", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 71
+#line 68
  testRunner.Then("the quality should increase by 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -506,7 +473,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("\"Backstage passes\" quality 2", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 73
+#line 70
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -526,27 +493,24 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "SellIn",
                             "Quality"});
-                table8.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "Backstage passes to a TAFKAL80ETC concert",
                             "4",
                             "2"});
-#line 74
- testRunner.Given("I have an item with the name of Backstage passes", ((string)(null)), table8, "Given ");
+#line 71
+ testRunner.Given("I have an item with the name of Backstage passes", ((string)(null)), table14, "Given ");
 #line hidden
-#line 77
+#line 74
  testRunner.And("the sell in date is 5 days or less", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 78
+#line 75
  testRunner.When("I update quality", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 79
+#line 76
  testRunner.Then("the quality should increase by 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -560,7 +524,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("\"Backstage passes\" after the concert", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 81
+#line 78
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -580,27 +544,22 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
-                            "SellIn",
                             "Quality"});
-                table9.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "Backstage passes to a TAFKAL80ETC concert",
-                            "11",
                             "2"});
-#line 82
- testRunner.Given("I have an item with the name of Backstage passes", ((string)(null)), table9, "Given ");
+#line 79
+ testRunner.Given("I have an item with the name of Backstage passes", ((string)(null)), table15, "Given ");
 #line hidden
-#line 85
+#line 82
  testRunner.And("the concert has happened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 86
+#line 83
  testRunner.When("I update quality", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 87
+#line 84
  testRunner.Then("the quality should be 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -609,14 +568,12 @@ this.FeatureBackground();
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("\"Conjured\" items degrade in Quality twice as fast as normal items")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         public virtual void ConjuredItemsDegradeInQualityTwiceAsFastAsNormalItems()
         {
-            string[] tagsOfScenario = new string[] {
-                    "ignore"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("\"Conjured\" items degrade in Quality twice as fast as normal items", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 91
+#line 88
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -636,27 +593,24 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line hidden
-                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Sell in",
                             "Quality"});
-                table10.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "Conjured Mana Cake",
                             "10",
                             "20"});
-#line 92
- testRunner.Given("I have an item", ((string)(null)), table10, "Given ");
+#line 89
+ testRunner.Given("I have an item", ((string)(null)), table16, "Given ");
 #line hidden
-#line 95
+#line 92
  testRunner.When("I update quality", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 96
+#line 93
  testRunner.Then("the sell in value should decrease by 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 97
+#line 94
  testRunner.Then("the quality should decrease by 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

@@ -13,17 +13,11 @@ namespace GildedRose.Specs.Steps
     {
 
         private readonly ScenarioContext _scenarioContext;
+        private readonly App _app = new();
 
         public ItemsStepDefinitions(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
-        }
-
-        [Given(@"a guilded rose")]
-        public void GivenAGuildedRose()
-        {
-            var app = new App();
-            _scenarioContext.Set(app);
         }
 
 
@@ -35,14 +29,21 @@ namespace GildedRose.Specs.Steps
         {
             var oldItem = table.CreateInstance<Item>();
             var item = table.CreateInstance<Item>();
-            var app = _scenarioContext.Get<App>();
-            app.Items.Add(item);
-            _scenarioContext.Set(app);
+
+            _app.Items.Add(item);
             _scenarioContext.Set(item);
             _scenarioContext.Set(oldItem, "oldItem");
         }
 
 
+        [Given(@"I have these items:")]
+        public void GivenIHaveTheseItems(Table table)
+        {
+            _app.Items = table.CreateSet<Item>().ToList();
+        }
+
+
+        [Given(@"the concert has happened")]
         [Given(@"the sell in date has passed")]
         public void GivenTheSellInDateHasPassed()
         {
@@ -59,16 +60,30 @@ namespace GildedRose.Specs.Steps
             _scenarioContext.Set(item);
         }
 
-
         [When(@"I update quality")]
         public void WhenIUpdateQuality()
         {
-            var app = _scenarioContext.Get<App>();
             var item = _scenarioContext.Get<Item>();
-            app.UpdateQuality();
-            _scenarioContext.Set(app);
+            _app.UpdateQuality();
             _scenarioContext.Set(item);
         }
+
+        [When(@"the items are updated (.*) times?")]
+        public void WhenTheItemsAreUpdatedTimes(int times)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                _app.UpdateQuality();
+            }
+        }
+
+        [Then(@"the updated items are:")]
+        public void ThenTheUpdatedItemsAre(Table table)
+        {
+            var expectedItems = table.CreateSet<Item>().ToList();
+            _app.Items.ShouldBeEquivalentTo(expectedItems);
+        }
+
 
         [Then(@"the sell in value should decrease by (.*)")]
         public void WhenTheSellInValueDecreasesBy(int expectedDecrease)
